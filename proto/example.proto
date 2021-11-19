@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package example;
+
+service Test {
+  rpc DoSomething(input)returns (output){}
+}
+
+message input {
+  // REQUIRED
+  int32 id =1;
+
+  // REQUIRED
+  string name = 2;
+}
+
+message output {
+  string result =1;
+}
+
+message validationError {
+  // REQUIRED
+  // The field is is invalid
+  string field = 1;
+
+  // REQUIRED
+  // The reason the field is invalid
+  string reason = 2;
+}
